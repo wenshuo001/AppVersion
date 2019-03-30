@@ -35,9 +35,10 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    val mFragmentList: MutableList<Fragment> = mutableListOf(MyFragment(), MyFragment(), MyFragment())
+    val mFragmentList: MutableList<Fragment> = mutableListOf(MyFragment(), MyFragment())
 
     fun setAppBarListener(){
+        mFragmentList.add(MyFragment())
         vp.setAdapter(object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getItem(position: Int): Fragment {
                 return mFragmentList[position]
@@ -48,10 +49,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        table_layout.addTab(table_layout.newTab().setText("Tab1"))
-        table_layout.addTab(table_layout.newTab().setText("Tab2"))
-        table_layout.addTab(table_layout.newTab().setText("Tab3"))
-
+        table_layout.addTab(table_layout.newTab().setText("快乐教师"))
+        table_layout.addTab(table_layout.newTab().setText("快乐校园"))
         table_layout.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(vp))
         vp.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(table_layout))
     }

@@ -32,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="260dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bg_header"/>
+                    android:src="@mipmap/timg_1"/>
             </LinearLayout>
 
             <android.support.design.widget.TabLayout
@@ -59,9 +59,9 @@
         android:id="@+id/sticky_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="#FFFFFF"
-        android:text="除了悬浮 我还会动"
+        android:textColor="@color/white"
+        android:text="App版本管理"
         android:gravity="center"
         android:textSize="16sp"
-        android:background="#39b9e9"/>
+        android:background="@color/colorPrimary"/>
 </FrameLayout>
