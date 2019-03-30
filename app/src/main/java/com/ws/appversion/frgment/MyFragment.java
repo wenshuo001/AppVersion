@@ -36,6 +36,8 @@ public class MyFragment extends Fragment {
     private void initView() {
         LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         mRv.setLayoutManager(manager);
+
+
         mAdapter = new RecyclerView.Adapter() {
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
