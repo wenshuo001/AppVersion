@@ -1,5 +1,7 @@
 package com.ws.appversion.bean;
 
+import com.ws.appversion.base.BaseBean;
+
 import java.util.List;
 
 /**
@@ -7,7 +9,7 @@ import java.util.List;
  * DataTime: 2019/3/30
  * Description:
  */
-public class AppVersion extends BaseBean {
+public class AppVersionBean extends BaseBean {
 
 
     private List<DataBean> data;

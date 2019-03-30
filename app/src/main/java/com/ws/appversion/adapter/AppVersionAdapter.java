@@ -2,7 +2,7 @@ package com.ws.appversion.adapter;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.ws.appversion.bean.AppVersion;
+import com.ws.appversion.bean.AppVersionBean;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import java.util.List;
  * DataTime: 2019/3/30
  * Description:
  */
-public class AppVersionAdapter extends BaseQuickAdapter<AppVersion.DataBean, BaseViewHolder> {
+public class AppVersionAdapter extends BaseQuickAdapter<AppVersionBean.DataBean, BaseViewHolder> {
 
     public AppVersionAdapter(int layoutResId, List data) {
         super(layoutResId, data);
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, AppVersion.DataBean item) {
+    protected void convert(BaseViewHolder helper, AppVersionBean.DataBean item) {
 
 
     }
