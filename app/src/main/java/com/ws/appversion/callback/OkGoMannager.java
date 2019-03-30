@@ -34,7 +34,8 @@ public class OkGoMannager {
         map.put("token",token);
         OkGo.<T>get(url)
                 .tag(tag)
-                .params(map)
+                .headers("Content-Type", "application/json; charset=utf-8")
+                .params("data","abcd")
                 .execute(callback);
         Log.e("Requets", "url-- "+url );
     }
@@ -44,6 +45,7 @@ public class OkGoMannager {
         map.put("token",token);
         OkGo.<T>post(url)
                 .tag(tag)
+                .headers("Content-Type", "application/json; charset=utf-8")
                 .params("data", mapToDESStr(map))
                 .execute(callback);
         Log.e("Requets", "url-- "+url );

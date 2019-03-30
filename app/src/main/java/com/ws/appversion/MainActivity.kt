@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.util.Pair
 import android.util.TypedValue
 import com.ws.appversion.activity.BaseActivity
+import com.ws.appversion.frgment.AppVersionFragment
 import com.ws.appversion.frgment.MyFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -45,7 +46,7 @@ class MainActivity : BaseActivity() {
     val mFragmentList = mutableListOf<Pair<String, Fragment>>()
 
     fun setAppBarListener(){
-        mFragmentList.add(Pair("快乐教师", MyFragment()))
+        mFragmentList.add(Pair("快乐教师", AppVersionFragment()))
         mFragmentList.add(Pair("快乐校园", MyFragment()))
         vp.adapter= MainAdapter(supportFragmentManager)
         table_layout.setupWithViewPager(vp)
