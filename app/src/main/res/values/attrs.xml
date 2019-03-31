@@ -77,4 +77,23 @@
         <attr name="svb_targetRotateY" format="float"/>
         <attr name="svb_animation" format="reference"/>
     </declare-styleable>
+
+
+    <!-- 自定义圆形进度条，属性设置 -->
+    <declare-styleable name="CustomCircleProgress">
+        <!-- 默认圆的颜色 -->
+        <attr name="cprogress_default_color" format="color"/>
+        <!-- 进度圆的颜色 -->
+        <attr name="cprogress_reached_color" format="color"/>
+        <!-- 进度条的高度 -->
+        <attr name="cprogress_reached_height" format="dimension"/>
+        <!-- 无进度时(默认圆)的边框高 -->
+        <attr name="cprogress_default_height" format="dimension"/>
+        <!-- 圆的半径 -->
+        <attr name="circle_radius" format="dimension"/>
+
+        <attr name="imagers" format="reference"/>
+
+        <attr name="imagersEnd" format="reference"/>
+    </declare-styleable>
 </resources>

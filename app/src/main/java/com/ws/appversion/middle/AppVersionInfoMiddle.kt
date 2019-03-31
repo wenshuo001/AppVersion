@@ -22,7 +22,7 @@ class AppVersionInfoMiddle(activity: BaseActivityCallBack) : BaseMiddle(activity
         val data = HashMap<String,String>()
         data.put("app_is_beta", app_is_beta.toString())
         data.put("app_isPorT", app_isPorT.toString())
-        sendGet("http://192.168.0.102:8099/app_version", data, AppVersionBean())
+        sendGet(Constant.REQUEST_BASE_URL+Constant.APP_VERSION_INFO, data, AppVersionBean())
     }
 
 

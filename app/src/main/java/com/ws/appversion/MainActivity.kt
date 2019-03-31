@@ -11,6 +11,8 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.util.Pair
 import android.util.TypedValue
+import android.view.Menu
+import android.view.MenuItem
 import com.ws.appversion.activity.BaseActivity
 import com.ws.appversion.frgment.AppVersionFragment
 import com.ws.appversion.frgment.MyFragment
@@ -67,6 +69,22 @@ class MainActivity : BaseActivity() {
         override fun getPageTitle(position: Int): CharSequence? {
             return mFragmentList.get(position).first
         }
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.toolbar_user){ //正式服
+
+        }else{
+
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
 

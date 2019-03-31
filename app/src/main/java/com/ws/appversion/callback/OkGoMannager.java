@@ -67,6 +67,21 @@ public class OkGoMannager {
         Log.e("data", "data-- "+desStr );
         return desStr;
     }
+
+
+    public static <T> void getSingleRequets(String url, Object tag, Map<String, String> map, JsonCallback<T> callback) {
+        // TODO:  加密 时间戳等 请求日志打印
+        Log.d("OkGoMannager", "method get");
+        map.put("token",token);
+        OkGo.<T>get(url)
+                .tag(tag)
+                .headers("Content-Type", "application/json; charset=utf-8")
+                .params("app_is_beta",map.get("app_is_beta"))
+                .params("app_isPorT",map.get("app_isPorT"))
+                .execute(callback);
+        Log.e("Requets", "url-- "+url );
+    }
+
     /**
      * 下载文件
      * @param url 下载地址

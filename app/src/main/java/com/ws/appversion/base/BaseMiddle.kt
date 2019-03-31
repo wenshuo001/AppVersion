@@ -49,7 +49,7 @@ abstract class BaseMiddle(var activity: BaseActivityCallBack) {
     }
 
     protected fun sendGet(url: String, data: Map<String, String>, any: Any) {
-        OkGoMannager.getRequets(url, this, data, object : JsonCallback<Any>() {
+        OkGoMannager.getSingleRequets(url, this, data, object : JsonCallback<Any>() {
             override fun onSuccess(response: Response<Any>) {
                 activity.onSuccess(JSONUtils.readValue(JSON.toJSONString(response.body()), any.javaClass))
             }

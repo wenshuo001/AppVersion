@@ -14,7 +14,10 @@ object Constant {
     /**
      * 查询 app
      */
-    const val TODO_STATUS_ADD = "app_version"
+    const val APP_VERSION_INFO = "app_version"
 
-
+    /**
+     * 查询 app
+     */
+    const val PAGE_SIZE = 15
 }

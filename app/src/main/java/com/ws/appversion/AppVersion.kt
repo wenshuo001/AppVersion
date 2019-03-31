@@ -1,10 +1,13 @@
 package com.ws.appversion
 
 import android.app.Application
+import android.os.Environment
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.cache.CacheEntity
 import com.lzy.okgo.cache.CacheMode
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor
+import com.lzy.okserver.OkDownload
+import com.lzy.okserver.task.XExecutor
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 import java.util.logging.Level
@@ -14,11 +17,23 @@ import java.util.logging.Level
  * DataTime: 2019/3/30
  * Description:
  */
-class AppVersion :Application() {
+class AppVersion :Application(){
+
 
     override fun onCreate() {
         super.onCreate()
         initOKGo()
+        initDownload()
+    }
+
+
+
+    private var download: OkDownload?=null
+    private fun initDownload() {
+        download = OkDownload.getInstance()
+        val path = Environment.getExternalStorageDirectory().path+"/AppVersion"
+        download?.folder=path
+        download?.threadPool?.setCorePoolSize(3)
     }
 
     private fun initOKGo() {
@@ -43,4 +58,5 @@ class AppVersion :Application() {
                 .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE).retryCount = 3
 
     }
+
 }

@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.lzy.okserver.OkDownload;
+import com.lzy.okserver.task.XExecutor;
 import com.ws.appversion.R;
 import com.ws.appversion.util.SystemBarTintManager;
 
