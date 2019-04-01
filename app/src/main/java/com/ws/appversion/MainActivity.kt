@@ -1,21 +1,16 @@
 package com.ws.appversion
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
-import android.widget.FrameLayout
-import android.support.design.widget.AppBarLayout
 import android.support.v4.app.Fragment
-import android.support.design.widget.TabLayout
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.util.Pair
-import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import com.ws.appversion.activity.BaseActivity
-import com.ws.appversion.frgment.AppVersionFragment
+import com.ws.appversion.frgment.TeacherFragment
 import com.ws.appversion.frgment.MyFragment
+import com.ws.appversion.frgment.ParentFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -48,8 +43,8 @@ class MainActivity : BaseActivity() {
     val mFragmentList = mutableListOf<Pair<String, Fragment>>()
 
     fun setAppBarListener(){
-        mFragmentList.add(Pair("快乐教师", AppVersionFragment()))
-        mFragmentList.add(Pair("快乐校园", MyFragment()))
+        mFragmentList.add(Pair("快乐教师", TeacherFragment()))
+        mFragmentList.add(Pair("快乐校园", ParentFragment()))
         vp.adapter= MainAdapter(supportFragmentManager)
         table_layout.setupWithViewPager(vp)
     }
@@ -77,11 +72,14 @@ class MainActivity : BaseActivity() {
         return true
     }
 
+
+    public var releaseOrdebug = 0  // 0 测试服 1 正式服
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.toolbar_user){ //正式服
-
+            releaseOrdebug=1
         }else{
-
+            releaseOrdebug=0
         }
 
         return super.onOptionsItemSelected(item)

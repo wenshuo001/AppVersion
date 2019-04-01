@@ -11,6 +11,9 @@ import com.lzy.okserver.task.XExecutor
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 import java.util.logging.Level
+import android.database.sqlite.SQLiteDatabase
+
+
 
 /**
  * Creator :Wen
@@ -19,14 +22,32 @@ import java.util.logging.Level
  */
 class AppVersion :Application(){
 
+    private var mApp: AppVersion? = null
+  //  private var mDaoSession: DaoSession? = null
 
     override fun onCreate() {
         super.onCreate()
+        mApp = this
         initOKGo()
         initDownload()
+        //配置数据库
+        initGreenDao()
     }
 
+    private fun initGreenDao() {
+        //创建数据库apk_info.db
+//        val helper = DaoMaster.DevOpenHelper(mApp, "apk_info.db")
+//        //获取可写数据库
+//        val database = helper.getWritableDatabase()
+//        //获取数据库对象
+//        val daoMaster = DaoMaster(database)
+//        //获取Dao对象管理者
+//        mDaoSession = daoMaster.newSession()
+    }
 
+//    fun getmDaoSession(): DaoSession {
+//        return mDaoSession
+//    }
 
     private var download: OkDownload?=null
     private fun initDownload() {

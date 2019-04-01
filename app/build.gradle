@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -25,6 +25,16 @@ android {
     }
 }
 
+//greendao配置
+greendao {
+    //版本号，升级时可配置
+    schemaVersion 1
+    //设置包名
+    daoPackage 'com.ws.appversion.db.dao'
+    //设置Daomaster Daosession Dao 目录
+    targetGenDir 'src/main/java'
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -33,24 +43,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-
-    implementation 'com.google.code.gson:gson:2.8.0'
-    implementation 'com.lzy.net:okgo:3.0.4'
-    implementation 'com.lzy.net:okserver:2.0.5'
-
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
 
-    implementation 'com.lxj:xpopup:1.6.3'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.lzy.net:okserver:2.0.5'
 
+    implementation 'com.lxj:xpopup:1.6.3'
     implementation 'com.jakewharton:butterknife:8.8.1'
     kapt "com.jakewharton:butterknife-compiler:8.8.1"
-
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'com.alibaba:fastjson:1.2.16'
+
+    implementation 'org.greenrobot:greendao:3.2.2'
 }

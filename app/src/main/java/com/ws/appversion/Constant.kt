@@ -8,8 +8,10 @@ package com.ws.appversion
 object Constant {
     /**
      * baseUrl
+     * http://192.168.0.111:8099/  Win
+     * http://192.168.0.102:8099/  Mac
      */
-    const val REQUEST_BASE_URL = "http://192.168.0.102:8099/"
+    const val REQUEST_BASE_URL = "http://192.168.0.111:8099/"
 
     /**
      * 查询 app

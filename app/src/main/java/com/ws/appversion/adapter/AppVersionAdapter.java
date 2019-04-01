@@ -1,9 +1,12 @@
 package com.ws.appversion.adapter;
 
+import android.widget.ImageView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.ws.appversion.R;
 import com.ws.appversion.bean.AppVersionBean;
+import com.ws.appversion.util.GliedUtil;
 
 import java.util.List;
 
@@ -23,5 +26,7 @@ public class AppVersionAdapter extends BaseQuickAdapter<AppVersionBean.DataBean,
         helper.setText(R.id.app_name,item.getAppName());
         helper.setText(R.id.app_version,"版本名："+item.getAppVersionName());
         helper.setText(R.id.app_uploadTime,""+item.getAppUploadtime());
+        GliedUtil.loadCircleCrop(mContext,item.getAppImg(), (ImageView) helper.getView(R.id.app_img));
+
     }
 }
