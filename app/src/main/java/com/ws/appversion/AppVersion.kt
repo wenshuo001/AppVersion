@@ -23,7 +23,7 @@ import android.database.sqlite.SQLiteDatabase
 class AppVersion :Application(){
 
     private var mApp: AppVersion? = null
-  //  private var mDaoSession: DaoSession? = null
+   // private var mDaoSession: DaoSession? = null
 
     override fun onCreate() {
         super.onCreate()
