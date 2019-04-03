@@ -2,6 +2,7 @@ package com.ws.appversion.bean;
 
 import com.ws.appversion.base.BaseBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class AppVersionBean extends BaseBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * id : 1
          * appName : 快乐教师

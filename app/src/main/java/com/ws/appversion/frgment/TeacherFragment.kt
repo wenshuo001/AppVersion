@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.OnItemClickListener
+import com.lzy.okgo.OkGo
 import com.lzy.okserver.OkDownload
 import com.lzy.okserver.task.XExecutor
 import com.ws.appversion.Constant
@@ -22,11 +23,14 @@ import com.ws.appversion.adapter.AppVersionAdapter
 import com.ws.appversion.base.BaseActivityCallBack
 import com.ws.appversion.base.BaseFragment
 import com.ws.appversion.bean.AppVersionBean
+import com.ws.appversion.callback.LogDownloadListener
 import com.ws.appversion.middle.AppVersionInfoMiddle
 import com.ws.appversion.util.Convert
 import com.ws.appversion.util.JSONUtils
 import com.ws.appversion.util.LogUtils
+import com.ws.appversion.util.ToastUtil
 import kotlinx.android.synthetic.main.fragment_list.*
+import java.io.File
 
 /**
  * Creator :Wen
@@ -73,7 +77,16 @@ import kotlinx.android.synthetic.main.fragment_list.*
         appVersionInfoAdapter?.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT)
         recyc?.adapter=appVersionInfoAdapter
         appVersionInfoAdapter?.setOnItemClickListener { adapter, view, position ->
-
+             //传入下载地址
+            val request = OkGo.get<File>((adapter.data[position] as AppVersionBean.DataBean).appDownloadPath)//
+            //这里第一个参数是tag，代表下载任务的唯一标识，传任意字符串都行，需要保证唯一,我这里用url作为了tag
+            OkDownload.request((adapter.data[position] as AppVersionBean.DataBean).appDownloadPath, request)//
+                    .priority(1)//
+                    .extra1((adapter.data[position] as AppVersionBean.DataBean))// 这里传入实体类 然后会在下载中去除
+                    .save() //
+                    .register(LogDownloadListener(activity))//
+                    .start()
+            ToastUtil.show(activity,"慢慢等")
         }
     }
 

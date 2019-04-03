@@ -1,4 +1,4 @@
-package com.ws.appversion.db;
+package com.ws.appversion.db.bean;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
@@ -6,9 +6,8 @@ import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class Eo_ApkDownloadInfo {
-    @Id(autoincrement = true)
+    @Id
     private Long id;
-
     private Long apkid;
     private String appFilePath;
     private String app_name;

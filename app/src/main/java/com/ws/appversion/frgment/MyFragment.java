@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ws.appversion.R;
+import com.ws.appversion.bean.AppVersionBean;
 
 
 /**
@@ -57,6 +58,8 @@ public class MyFragment extends Fragment {
             }
         };
         mRv.setAdapter(mAdapter);
+
+
     }
 
     static class Holder extends RecyclerView.ViewHolder {

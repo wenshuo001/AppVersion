@@ -8,7 +8,7 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.ws.appversion.db.Eo_ApkDownloadInfo;
+import com.ws.appversion.db.bean.Eo_ApkDownloadInfo;
 
 import com.ws.appversion.db.dao.Eo_ApkDownloadInfoDao;
 
